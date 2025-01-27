@@ -1,0 +1,80 @@
+<%-include('../layout/headSection') %>
+
+    <body>
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+
+        <div id="main-wrapper">
+
+            <%-include('../layout/header')-%>
+                <%-include('../layout/sideBar') %>
+                    <% console.log(admin) %>
+
+                        <div class="page-wrapper">
+                            <div class="page-breadcrumb">
+                                <div class="row">
+                                    <div class="col-12 d-flex no-block align-items-center">
+                                        <div class="ml-auto text-right">
+                                            <nav aria-label="breadcrumb">
+                                                <ol class="breadcrumb">
+                                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                    <li class="breadcrumb-item active" aria-current="page">Add</li>
+                                                </ol>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <h4 class="card-title">My Profile</h4>
+                                <div class="col-md-10">
+                                    <div class="card p-2">
+                                        <img src="/profile/<%=admin.admin_profile%>" alt="profile" height="220"
+                                            width="220" class="mx-auto rounded-circle">
+                                        <form class="form-horizontal" enctype="multipart/form-data"
+                                            action="/api/admin/updateProfile" method="post">
+                                            <div class="card-body">
+                                                <div class="form-group row">
+                                                    <label for="fname"
+                                                        class="col-sm-3 text-right control-label col-form-label">User
+                                                        Name</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"
+                                                            value="<%=admin.username%>" name="username"
+                                                            placeholder="User Name Here">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="fname"
+                                                        class="col-sm-3 text-right control-label col-form-label">User
+                                                        email</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" value="<%=admin.email%>"
+                                                            name="email" placeholder="email Here" disabled>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="email" id="" value="<%=admin.email%>">
+                                                <div class="form-group row">
+                                                    <label for="fname"
+                                                        class="col-sm-3 text-right control-label col-form-label">User
+                                                        Profile</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="file" class="form-control" name="admin_profile">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="border-top">
+                                                    <div class="card-body">
+                                                        <button class="btn btn-primary">Submit</button>
+                                                    </div>
+                                                </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <%-include('../layout/jsLinks') %>

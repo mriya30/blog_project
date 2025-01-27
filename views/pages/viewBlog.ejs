@@ -1,0 +1,82 @@
+
+<%- include('../layout/headSection')-%>
+
+
+        <div id="main-wrapper">
+            <%- include('../layout/header')-%>
+                <%- include('../layout/sidebar')-%>
+                    <div class="page-wrapper">
+                        <div class="page-breadcrumb">
+                            <div class="row">
+                                <div class="col-12 d-flex no-block align-items-center">
+                                    <h3 class="page-title">View Blog</h3>
+                                    <div class="ml-auto text-right">
+                                        <nav aria-label="breadcrumb">
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="card">
+                                <table class="table table-stripped">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Blog Category</th>
+                                            <th scope="col">Blog Title</th>
+                                            <th scope="col">Blog Date</th>
+                                            <th scope="col">Blog Author</th>
+                                            <th scope="col">Blog Content</th>
+                                            <th scope="col">Blog Description</th>
+                                            <th scope="col">Blog Image</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% blog.forEach((ele,index)=>{
+                                            %>
+                                            <tr>
+                                                <td>
+                                                    <%= index+1%>
+                                                </td>
+                                                <td>
+                                                    <%= ele.blog_cat%>
+                                                </td>
+                                                <td>
+                                                    <%= ele.blog_title%>
+                                                </td>
+                                                <td>
+                                                    <%= ele.blog_date%>
+                                                </td>
+                                                <td>
+                                                    <%= ele.blog_author%>
+                                                </td>
+                                                <td>
+                                                    <%= ele.blog_content%>
+                                                </td>
+                                                <td>
+                                                    <%= ele.blog_desc%>
+                                                </td>
+                                                <td><img src="/profile/<%=ele.blog_img%>" alt="" height="80" width="80">
+                                                </td>
+                                                <td>
+                                                    <a href="/api/blog/<%=ele._id%>"
+                                                        class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></a>
+                                                    <a href="/updateBlog?id=<%=ele._id%>"
+                                                        class="btn btn-outline-warning"><i class="fa-regular fa-pen-to-square"></i></a>
+                                                </td>
+                                            </tr>
+                                            <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <footer class="footer text-center">All Rights Reserved by Matrix-admin. Designed and
+                                Developed by <a href="https://wrappixel.com">WrapPixel</a>.</footer>
+                        </div>
+                    </div>
+                    <%- include('../layout/jsLinks')-%>

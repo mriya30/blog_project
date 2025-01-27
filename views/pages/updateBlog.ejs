@@ -1,0 +1,120 @@
+
+<%- include('../layout/headSection')-%>
+
+        <div id="main-wrapper">
+
+            <%- include('../layout/header')-%>
+                <%- include('../layout/sidebar')-%>
+
+                    <div class="page-wrapper">
+                        <div class="page-breadcrumb">
+                            <div class="row">
+                                <div class="col-12 d-flex no-block align-items-center">
+                                    <h3 class="page-title">Update Blog</h3>
+                                    <div class="ml-auto text-right">
+                                        <nav aria-label="breadcrumb">
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="card col-lg-10 mx-auto">
+                                <div class="card p-2">
+                                        <img src="/profile/<%=blog.blog_img%>" alt="profile" height="220"
+                                            width="220" class="mx-auto rounded-circle"></div>
+                                <form class="form-horizontal" method="post" action="/api/blog/<%=blog._id%>"
+                                    enctype="multipart/form-data">
+                                    <div class="card-body mt-5 ">
+                                        <div class="form-group row">
+                                            <label for="lname"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog Category</label>
+                                            <div class="col-sm-9">
+                                                <select name="blog_cat" id="" class="form-control  col-form-lable"
+                                                    >
+                                                    <option value="<%=blog.blog_cat%>" selected disabled><%=blog.blog_cat%></option>
+                                                    <option value="Technology">Technology</option>
+                                                    <option value="Education">Education</option>
+                                                    <option value="Travel">Travel</option>
+                                                    <option value="Lifestyle">Lifestyle</option>
+                                                    <option value="Entertainment">Entertainment</option>
+                                                    <option value="Food">Food</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="fname"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog Title</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="fname"
+                                                    placeholder="enter blog title" name="blog_title"
+                                                    value="<%=blog.blog_title%>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="lname"
+                                                class="col-sm-3 text-right control-label col-form-label">Image</label>
+                                            <div class="col-sm-9">
+                                                <input type="file" class="form-control" name="blog_img"
+                                                    value="<%=blog.blog_img%>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="lname"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog Author</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="lname"
+                                                    placeholder="enter auther name" name="blog_author"
+                                                    value="<%=blog.blog_author%>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="lname"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog Date</label>
+                                            <div class="col-sm-9">
+                                                <input type="date" class="form-control" id="lname"
+                                                    placeholder="enter date" name="blog_date"
+                                                    value="<%=blog.blog_date%>" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label for="lname"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog Content</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="lname"
+                                                    placeholder="enter blog_content name" name="blog_content"
+                                                    value="<%=blog.blog_content%>" required>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="form-group row">
+                                            <label for="lname"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog Description</label>
+                                            <div class="col-sm-9">
+                                                <textarea id="" class="form-control" placeholder="enter description"
+                                                    name="blog_desc"
+                                                    value="<%=blog.blog_desc%> " required><%=blog.blog_desc%></textarea>
+                                            </div>
+                                        </div>
+                                     
+                                        <div class="border-top text-center">
+                                            <div class="card-body">
+                                                <button type="submit" class="btn btn-warning">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <footer class="footer text-center">All Rights Reserved by Matrix-admin. Designed and
+                                Developed by <a href="https://wrappixel.com">WrapPixel</a>.</footer>
+                        </div>
+                    </div>
+                    <%- include('../layout/jsLinks')-%>
+    </body>
+
+</html>

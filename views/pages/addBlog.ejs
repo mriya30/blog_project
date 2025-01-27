@@ -1,0 +1,124 @@
+<%-include('../layout/headSection')%>
+
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+
+        <div id="main-wrapper">
+            <%-include('../layout/header') %>
+                <%-include('../layout/sideBar') %>
+
+                    <div class="page-wrapper">
+                        <div class="page-breadcrumb">
+                            <div class="row">
+                                <div class="col-12 d-flex no-block align-items-center">
+                                    <h3 class="page-title">Add-blog</h3>
+                                    <div class="ml-auto text-right">
+                                        <nav aria-label="breadcrumb">
+                                            <ol class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid">
+                            <div class="card col-lg-10 mx-auto">
+                                <form class="form-horizontal ms-auto" method="post" action="/api/blog"
+                                    enctype="multipart/form-data">
+                                    <div class="card-body mt-5">
+                                        <div class="form-group row">
+                                            <label for="blogCategory"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog
+                                                Category</label>
+                                            <div class="col-sm-9">
+                                                <select name="blog_cat" id="" class="form-control col-form-lable"
+                                                    value="Blog Category">
+                                                    <option value="" selected disabled>Blog Category</option>
+                                                    <option value="Technology">Technology</option>
+                                                    <option value="Education">Education</option>
+                                                    <option value="Travel">Travel</option>
+                                                    <option value="Lifestyle">Lifestyle</option>
+                                                    <option value="Entertainment">Entertainment</option>
+                                                    <option value="Food">Food</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="blogTitle"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog
+                                                Title</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="blogTitle" name="blog_title"
+                                                    placeholder="Enter Blog Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="blogImage"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog
+                                                Image</label>
+                                            <div class="col-sm-9">
+                                                <input type="file" class="form-control custom-file-input" id="blogImage"
+                                                    name="blog_img">
+                                                <label class="custom-file-label" for="blogImage">enter img</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="blogContent"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog
+                                                Content</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="blogContent"
+                                                    name="blog_content" placeholder="Enter Blog Content" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="blogAuthor"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog
+                                                Author</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" id="blogAuthor"
+                                                    name="blog_author" placeholder="Enter Blog Author" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="blogDate"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog
+                                                Date</label>
+                                            <div class="col-sm-9">
+                                                <input type="date" class="form-control" id="blogDate" name="blog_date">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="blogDescription"
+                                                class="col-sm-3 text-right control-label col-form-label">Blog
+                                                Description</label>
+                                            <div class="col-sm-9">
+                                                <textarea class="form-control" id="blogDescription" name="blog_desc"
+                                                    placeholder="Enter Blog Description" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border-top text-center">
+                                        <div class="card-body">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <footer class="footer text-center">
+                            All Rights Reserved by Matrix-admin. Designed and Developed by <a
+                                href="https://wrappixel.com">WrapPixel</a>.
+                        </footer>
+                    </div>
+        </div>
+
+        <%-include('../layout/jslinks')%>
