@@ -7,15 +7,23 @@ const Router = require('./routes/blog.routes')
 const pageRoutes = require('./routes/page.routes')
 const Admin = require('./routes/admin.routes')
 const cookieParser = require('cookie-parser')
+const session=require('express-session')
 const { accesspage } = require('./utilis/accessPage')
+const passport=require('passport')
+const passportAuth=require('./config/passport')
+passportAuth(passport)
 
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use('/profile', express.static('uploads'))
-app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser('tst2'))
+app.use(session('test'))
+app.use(passport.initialize())
+app.use(passport.session())
+
 
 
 
